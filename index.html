@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Love Story - Code by @phamcongkhaihoan</title>
+    <title>Our Love Story</title>
     <style>
         * {
             margin: 0;
@@ -20,26 +20,20 @@
             justify-content: center;
             align-items: center;
             color: #fff;
-            flex-direction: column; /* Xếp theo chiều dọc để chừa chỗ cho copyright */
+            flex-direction: column;
         }
 
-        /* Hiệu ứng nền mờ ảo */
+        /* Hiệu ứng nền mờ ảo nhẹ nhàng */
         .background-glow {
             position: absolute;
             width: 300px;
             height: 300px;
-            background: radial-gradient(circle, rgba(255, 20, 147, 0.4) 0%, rgba(0,0,0,0) 70%);
+            background: radial-gradient(circle, rgba(255, 20, 147, 0.2) 0%, rgba(0,0,0,0) 70%);
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
             z-index: 1;
             filter: blur(30px);
-            animation: pulse 4s infinite alternate;
-        }
-
-        @keyframes pulse {
-            0% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.5; }
-            100% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.9; }
         }
 
         /* Khung nội dung chính */
@@ -54,7 +48,7 @@
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
             max-width: 90%;
             width: 450px;
-            margin-bottom: 30px; /* Tạo khoảng cách với copyright bên dưới */
+            margin-bottom: 25px;
         }
 
         h1 {
@@ -63,7 +57,6 @@
             background: linear-gradient(45deg, #ff416c, #ff4b2b);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 10px rgba(255, 65, 108, 0.3);
         }
 
         /* Trái tim lớn đập theo nhịp */
@@ -73,7 +66,6 @@
             margin: 15px 0;
             animation: heartbeat 1.2s infinite;
             display: inline-block;
-            filter: drop-shadow(0 0 15px #ff416c);
         }
 
         @keyframes heartbeat {
@@ -117,18 +109,17 @@
             border-radius: 50px;
             cursor: pointer;
             transition: 0.3s;
-            box-shadow: 0 5px 15px rgba(255, 65, 108, 0.4);
         }
 
         .btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(255, 65, 108, 0.6);
+            box-shadow: 0 8px 25px rgba(255, 65, 108, 0.4);
         }
 
         /* Hiệu ứng tim rơi */
         .heart-fall {
             position: absolute;
-            color: rgba(255, 65, 108, 0.7);
+            color: rgba(255, 65, 108, 0.6);
             font-size: 1.5rem;
             pointer-events: none;
             z-index: 2;
@@ -136,38 +127,19 @@
         }
 
         @keyframes fall {
-            0% {
-                transform: translateY(-10vh) rotate(0deg);
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(105vh) rotate(360deg);
-                opacity: 0;
-            }
+            0% { transform: translateY(-10vh) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(105vh) rotate(360deg); opacity: 0; }
         }
 
-        /* --- CẬP NHẬT: PHẦN COPYRIGHT TO RÕ --- */
+        /* --- SỬA LẠI COPYRIGHT: BÌNH THƯỜNG, RÕ RÀNG --- */
         .copyright {
-            display: block; /* Hiện lại */
             z-index: 20;
             text-align: center;
-            
-            /* Làm cho to ra và rõ ràng */
-            font-size: 1.8rem; /* Kích thước lớn nổi bật */
-            font-weight: 800; /* Rất đậm */
-            color: #fff;
-            
-            /* Hiệu ứng phát sáng neon để cực kỳ rõ */
-            text-shadow: 
-                0 0 5px #fff,
-                0 0 10px #fff,
-                0 0 20px #ff00de,
-                0 0 30px #ff00de,
-                0 0 40px #ff00de;
-            
-            letter-spacing: 2px;
-            margin-top: 10px;
-            opacity: 0.9;
+            font-size: 1.3rem; /* To vừa đủ nhìn rõ */
+            font-weight: 600; /* Đậm nét vừa phải */
+            color: rgba(255, 255, 255, 0.7); /* Màu trắng mờ tinh tế, không chói */
+            text-shadow: none; /* Xóa sạch bóng neon màu hồng */
+            letter-spacing: 1px;
         }
     </style>
 </head>
@@ -184,8 +156,8 @@
         <button class="btn" onclick="changeQuote()">Nhận một chút ngọt ngào</button>
     </div>
 
-    <!-- Dòng chữ bản quyền đã được làm to và nổi bật -->
-    <div class="copyright">Code by @phamcongkhaihoan</div>
+    <!-- Hiển thị chữ trần bình thường rõ ràng -->
+    <div class="copyright">@phamcongkhaihoan</div>
 
     <script>
         const quotes = [
