@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="vi">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Khánh ♥ Quỳnh - Our Love Story</title>
+    <title>Our Love Story - Code by @phamcongkhaihoan</title>
     <style>
         * {
             margin: 0;
@@ -21,6 +20,7 @@
             justify-content: center;
             align-items: center;
             color: #fff;
+            flex-direction: column; /* Xếp theo chiều dọc để chừa chỗ cho copyright */
         }
 
         /* Hiệu ứng nền mờ ảo */
@@ -28,7 +28,7 @@
             position: absolute;
             width: 300px;
             height: 300px;
-            background: radial-gradient(circle, rgba(255, 20, 147, 0.4) 0%, rgba(0, 0, 0, 0) 70%);
+            background: radial-gradient(circle, rgba(255, 20, 147, 0.4) 0%, rgba(0,0,0,0) 70%);
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
@@ -38,15 +38,8 @@
         }
 
         @keyframes pulse {
-            0% {
-                transform: translate(-50%, -50%) scale(0.8);
-                opacity: 0.5;
-            }
-
-            100% {
-                transform: translate(-50%, -50%) scale(1.2);
-                opacity: 0.9;
-            }
+            0% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.5; }
+            100% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.9; }
         }
 
         /* Khung nội dung chính */
@@ -61,11 +54,12 @@
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
             max-width: 90%;
             width: 450px;
+            margin-bottom: 30px; /* Tạo khoảng cách với copyright bên dưới */
         }
 
         h1 {
             font-size: 2.5rem;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
             background: linear-gradient(45deg, #ff416c, #ff4b2b);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -76,32 +70,18 @@
         .big-heart {
             font-size: 4rem;
             color: #ff416c;
-            margin: 20px 0;
+            margin: 15px 0;
             animation: heartbeat 1.2s infinite;
             display: inline-block;
             filter: drop-shadow(0 0 15px #ff416c);
         }
 
         @keyframes heartbeat {
-            0% {
-                transform: scale(1);
-            }
-
-            20% {
-                transform: scale(1.15);
-            }
-
-            40% {
-                transform: scale(1);
-            }
-
-            60% {
-                transform: scale(1.15);
-            }
-
-            100% {
-                transform: scale(1);
-            }
+            0% { transform: scale(1); }
+            20% { transform: scale(1.15); }
+            40% { transform: scale(1); }
+            60% { transform: scale(1.15); }
+            100% { transform: scale(1); }
         }
 
         /* Hiệu ứng chữ chạy */
@@ -122,15 +102,8 @@
         }
 
         @keyframes blink {
-
-            0%,
-            100% {
-                opacity: 0;
-            }
-
-            50% {
-                opacity: 1;
-            }
+            0%, 100% { opacity: 0; }
+            50% { opacity: 1; }
         }
 
         /* Nút tương tác */
@@ -167,51 +140,62 @@
                 transform: translateY(-10vh) rotate(0deg);
                 opacity: 1;
             }
-
             100% {
                 transform: translateY(105vh) rotate(360deg);
                 opacity: 0;
             }
         }
 
-        /* Bản quyền footer */
+        /* --- CẬP NHẬT: PHẦN COPYRIGHT TO RÕ --- */
         .copyright {
-            position: absolute;
-            bottom: 15px;
-            font-size: 0.8rem;
-            color: rgba(255, 255, 255, 0.3);
-            letter-spacing: 1px;
-            z-index: 10;
+            display: block; /* Hiện lại */
+            z-index: 20;
+            text-align: center;
+            
+            /* Làm cho to ra và rõ ràng */
+            font-size: 1.8rem; /* Kích thước lớn nổi bật */
+            font-weight: 800; /* Rất đậm */
+            color: #fff;
+            
+            /* Hiệu ứng phát sáng neon để cực kỳ rõ */
+            text-shadow: 
+                0 0 5px #fff,
+                0 0 10px #fff,
+                0 0 20px #ff00de,
+                0 0 30px #ff00de,
+                0 0 40px #ff00de;
+            
+            letter-spacing: 2px;
+            margin-top: 10px;
+            opacity: 0.9;
         }
     </style>
 </head>
-
 <body>
 
     <div class="background-glow"></div>
 
     <div class="container">
-        <h1>Khánh ♥ Quỳnh</h1>
+        <h1>Anh ♥ Em</h1>
         <div class="big-heart">❤️</div>
         <div class="quote-box">
             <span id="text-space"></span><span class="cursor">|</span>
         </div>
-        <button class="btn" onclick="changeQuote()">Bấm để nhận thính cực mạnh</button>
+        <button class="btn" onclick="changeQuote()">Nhận một chút ngọt ngào</button>
     </div>
 
-    <!-- Bản quyền yêu cầu -->
-    <div class="copyright">@phamcongkhaihoan</div>
+    <!-- Dòng chữ bản quyền đã được làm to và nổi bật -->
+    <div class="copyright">Code by @phamcongkhaihoan</div>
 
     <script>
-        // Danh sách câu thả thính/tỏ tình của Khánh và Quỳnh
         const quotes = [
-            "Khánh sinh ra không phải để chạy trốn định mệnh, mà là để yêu Quỳnh.",
-            "Trái đất có 8 tỉ người, nhưng tim Khánh chỉ chừa đúng một chỗ cho Quỳnh thôi.",
-            "Quỳnh có biết tại sao Khánh thích chụp ảnh không? Vì Khánh muốn lưu giữ mọi khoảnh khắc có Quỳnh.",
-            "Dự báo thời tiết nói hôm nay trời hanh khô, nhưng gặp Quỳnh là Khánh thấy tim 'sũng nước'.",
-            "Nếu Quỳnh là một bài toán khó, Khánh nguyện dành cả đời để tìm lời giải.",
-            "Gọi Quỳnh là hoàng hôn, vì phải kết thúc một ngày Khánh mới có được Quỳnh.",
-            "Người ta thích cúp vàng, còn Khánh thì chỉ thích 'cúp' luôn tim Quỳnh."
+            "Anh sinh ra không phải để chạy trốn định mệnh, mà là để gặp và yêu em.",
+            "Trái đất có hơn 8 tỉ người, nhưng thế giới của anh thì chỉ thu bé lại vừa bằng em.",
+            "Bầu trời xanh, làn mây trắng. Anh không say nắng, nhưng lại say em.",
+            "Dự báo thời tiết nói hôm nay trời hanh khô, nhưng gặp em là anh thấy tim mình tan chảy.",
+            "Nếu cuộc đời là một bài toán khó, anh nguyện dành cả thanh xuân để tìm ra đáp án là em.",
+            "Gọi em là hoàng hôn, vì phải chờ đến cuối ngày anh mới có được khoảnh khắc đẹp nhất.",
+            "Người ta thích cúp vàng chiến thắng, còn anh thì chỉ muốn 'cúp' luôn trái tim em thôi."
         ];
 
         let currentIdx = 0;
@@ -220,7 +204,7 @@
         function typeWriter(text, i, callback) {
             if (i < text.length) {
                 document.getElementById("text-space").innerHTML = text.substring(0, i + 1);
-                setTimeout(function () {
+                setTimeout(function() {
                     typeWriter(text, i + 1, callback)
                 }, 50);
             } else if (typeof callback == 'function') {
@@ -231,49 +215,43 @@
         function changeQuote() {
             if (isTyping) return;
             isTyping = true;
-
-            // Chọn ngẫu nhiên hoặc theo thứ tự câu tiếp theo
+            
             let nextIdx = Math.floor(Math.random() * quotes.length);
             while (nextIdx === currentIdx) {
                 nextIdx = Math.floor(Math.random() * quotes.length);
             }
             currentIdx = nextIdx;
 
-            typeWriter(quotes[currentIdx], 0, function () {
+            typeWriter(quotes[currentIdx], 0, function() {
                 isTyping = false;
             });
         }
 
-        // Hiệu ứng tạo mưa tim rơi tự động
         function createHeart() {
             const heart = document.createElement('div');
             heart.classList.add('heart-fall');
-
-            // Random hình dáng tim khác nhau
+            
             const heartIcons = ['❤️', '💖', '💗', '💕', '🥰'];
             heart.innerText = heartIcons[Math.floor(Math.random() * heartIcons.length)];
-
+            
             heart.style.left = Math.random() * 100 + "vw";
-            heart.style.animationDuration = Math.random() * 3 + 2 + "s"; // từ 2s đến 5s
-            heart.style.fontSize = Math.random() * 15 + 15 + "px"; // kích thước ngẫu nhiên
-
+            heart.style.animationDuration = Math.random() * 3 + 2 + "s";
+            heart.style.fontSize = Math.random() * 15 + 15 + "px";
+            
             document.body.appendChild(heart);
-
+            
             setTimeout(() => {
                 heart.remove();
             }, 5000);
         }
 
-        // Tự động rơi tim mỗi 300ms
         setInterval(createHeart, 300);
 
-        // Chạy câu đầu tiên khi load trang
-        window.onload = function () {
-            typeWriter(quotes[0], 0, function () {
+        window.onload = function() {
+            typeWriter(quotes[0], 0, function() {
                 isTyping = false;
             });
         };
     </script>
 </body>
-
 </html>
